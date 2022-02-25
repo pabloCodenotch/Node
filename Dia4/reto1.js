@@ -4,8 +4,8 @@ const app = express();
 
 const port = 8000;
 
-let prof = new Professional("Quentin Tarantantino", 57, "male", 70, 178, "blonde", "brown", "caucasian", false, "EEUU", 7, "director");
-// let prof = null
+// let prof = new Professional("Quentin Tarantantino", 57, "male", 70, 178, "blonde", "brown", "caucasian", false, "EEUU", 7, "director");
+let prof = null
 
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
@@ -63,6 +63,7 @@ app.delete("/professional",
         {
             
             if(prof!=null){
+                prof= {}
                 let mensaje = {err:false, codigo: 200, mensaje: "El perfil ha sido funado."};
                 res.send(mensaje)}
             else{
