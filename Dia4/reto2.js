@@ -72,10 +72,11 @@ app.post("/profesionales",
 app.put("/profesionales",
             function(req, res)
             {
+                let id = req.body.id
                 for(let i = 0; i < profesionales.length; i++){
-                    if(req.body == profesionales[i]){
+                    if(id == i){
 
-                        profesionales.push(req.body);
+                        profesionales[i] = req.body
                         let mensaje = {err: false, codigo: 200, mensaje: 'Perfil MOdificado con exito con exito.', nuevoPerfil: req.body};
                         res.send(mensaje)
                     }
